@@ -9,7 +9,7 @@ print "-------------------\n";
 print "COLLEGE REGISTER\n";
 print "-------------------\n";
 print "1) STUDENTS \n";
-print "2) ASIGNAMENTS \n";
+print "2) COURSES \n";
 print "3) SCORES \n";
 print "4) AVERAGES\n";
 print "5) SAVE REGISTERS TO .CSV \n \n";
@@ -60,11 +60,11 @@ $opt=<STDIN>;
 }
 }
 
-sub asignaments()
+sub courses()
 {
 default_menu();
 print "4) Search By ID \n";
-print "5) Search by Name Asignament\n";
+print "5) Search by Name of Course\n";
 print "6 List By Year \n";
 print "0) Back to main Menu \n";
 
@@ -84,7 +84,7 @@ case 3
 case 4
 {print "Search By Id \n";}
 case 5
-{print "Search by Name Assignement \n";}
+{print "Search by Name of Course \n";}
 case 6
 {print "List By Year \n";}
 else
@@ -93,7 +93,7 @@ else
 
 default_menu();
 print "4) Search By ID \n";
-print "5) Search by Name Asignament\n";
+print "5) Search by Name of Course\n";
 print "6 List By Year \n";
 print "0) Back to main Menu \n";
 
@@ -108,7 +108,7 @@ sub scores()
 default_menu();
 print "4) List by student \n";
 print "5) List by year \n";
-print "6) List by Asignament \n";
+print "6) List by Coruse \n";
 print "0) Back to main menu \n";
 
 print ":";
@@ -123,14 +123,14 @@ case 2{print"edit \n";}
 case 3{print"delete \n";}
 case 4{print"list by student \n";}
 case 5{print"list by year \n";}
-case 6{print"list by asignament \n";}
+case 6{print"list by course \n";}
 else{print"incorrect option \n";}
 }
 
 default_menu();
 print "4) List by student \n";
 print "5) List by year \n";
-print "6) List by Asignament \n";
+print "6) List by Course \n";
 print "0) Back to main menu \n";
 print ":";
 $opt=<STDIN>; 
@@ -142,7 +142,7 @@ sub averages()
 {
 print "1) List by student \n";
 print "2) List by year \n";
-print "3) List by Asignament \n";
+print "3) List by Course \n";
 print "4) List by Semester \n";
 print "0) Back to main menu \n";
 
@@ -155,14 +155,14 @@ switch($opt)
 {
 case 1{print"list by student \n";}
 case 2{print"list by year \n";}
-case 3{print"list by asignament \n";}
+case 3{print"list by Course \n";}
 case 3{print"list by semester \n";}
 else{print"incorrect option \n";}
 }
 
 print "1) List by student \n";
 print "2) List by year \n";
-print "3) List by Asignament \n";
+print "3) List by Course \n";
 print "4) List by Semester \n";
 print "0) Back to main menu \n";
 print ":";
@@ -196,9 +196,9 @@ students();
 case 2
 {
 print "-------------------\n";
-print "ASSIGNEMENTS\n";
+print "COURSES\n";
 print "-------------------\n";
-asignaments();
+courses();
 }
 
 
