@@ -1,13 +1,9 @@
 #!/usr/bin/perl -w
-#crear un menu y llamar a funciones
-#use Switch;
-use 5.010;
+
 use strict;
-use autodie;
 use warnings;
+use Switch;
 
-
-#-----------------MENU--------------------------
 sub menu{
 print "-------------------\n";
 print "COLLEGE REGISTER\n";
@@ -20,150 +16,222 @@ print "5) SAVE REGISTERS TO .CSV \n \n";
 print "0) EXIT\n";
 }
 
-sub default_options()
+sub default_menu()
 {
-print "1) ADD\n";
-print "2) LIST\n";
-print "3) SEARCH \n";
-print "4) EXIT\n";
+print "1) New \n";
+print "2) Edit \n";
+print "3) Delete \n";
 }
 
-
-sub menu_students()
+sub students()
 {
-print "\n---------------\nSTUDENTS\n\n";    
+default_menu();
+print "4) Search By ID \n";
+print "5) Search by Name \n";
+print "0) Back to main Menu \n";
 
-default_options();
-print"Insert Option: ";
+print":";
+my $opt=<STDIN>;    
+
+while($opt!=0){
+switch($opt)
+{
+case 1
+{print "New \n";}
+case 2
+{print "Edit \n";}
+case 3
+{print "Delete \n";}
+case 4
+{print "Search By Id \n";}
+case 5
+{print "Search by Name \n";}
+
+else
+{print "Incorrect Option \n";}
+}
+
+default_menu();
+print "4) Search By ID \n";
+print "5) Search by Name \n";
+print "0) Back to main Menu \n";
+print ":";
+$opt=<STDIN>;
+}
+}
+
+sub asignaments()
+{
+default_menu();
+print "4) Search By ID \n";
+print "5) Search by Name Asignament\n";
+print "6 List By Year \n";
+print "0) Back to main Menu \n";
+
+print ":";
 my $opt=<STDIN>;
 
 while($opt!=0)
 {
+switch($opt)
+{
+case 1
+{print "New \n";}
+case 2
+{print "Edit \n";}
+case 3
+{print "Delete \n";}
+case 4
+{print "Search By Id \n";}
+case 5
+{print "Search by Name Assignement \n";}
+case 6
+{print "List By Year \n";}
+else
+{print "Incorrect Option \n";}
+}    
 
-if( $opt == 1){print"hola";}
-elsif( $opt == 2){print"hello";}
-elsif( $opt == 3){print"alala";}
-elsif( $opt == 4){print"hao";}
-else {print "Option Incorrect\n";}
+default_menu();
+print "4) Search By ID \n";
+print "5) Search by Name Asignament\n";
+print "6 List By Year \n";
+print "0) Back to main Menu \n";
 
-
-print "\n---------------\nSTUDENTS\n\n";    
-default_options();
-print"Insert Option: ";
+print ":";
 $opt=<STDIN>;
 }
 }
 
 
-sub menu_asignaments()
+sub scores()
 {
-print "\n---------------\nASIGNAMENTS\n\n";    
+default_menu();
+print "4) List by student \n";
+print "5) List by year \n";
+print "6) List by Asignament \n";
+print "0) Back to main menu \n";
 
-default_options();
-print"Insert Option: ";
-my $opt=<STDIN>;
+print ":";
+my $opt=<STDIN>; 
 
 while($opt!=0)
 {
-
-if( $opt == 1){print"hola";}
-elsif( $opt == 2){print"hello";}
-elsif( $opt == 3){print"alala";}
-elsif( $opt == 4){print"hao";}
-else {print "Option Incorrect\n";}
-
-
-print "\n---------------\nASIGNAMENTS\n\n";    
-default_options();
-print"Insert Option: ";
-$opt=<STDIN>;
-}
-}
-
-
-
-
-
-
-
-
-sub menu_scores()
+switch($opt)
 {
-print "\n---------------\nSCORES\n\n";    
+case 1{print"add \n";}
+case 2{print"edit \n";}
+case 3{print"delete \n";}
+case 4{print"list by student \n";}
+case 5{print"list by year \n";}
+case 6{print"list by asignament \n";}
+else{print"incorrect option \n";}
+}
 
-default_options();
-print"Insert Option: ";
-my $opt=<STDIN>;
+default_menu();
+print "4) List by student \n";
+print "5) List by year \n";
+print "6) List by Asignament \n";
+print "0) Back to main menu \n";
+print ":";
+$opt=<STDIN>; 
+}
+}
+
+
+sub averages()
+{
+print "1) List by student \n";
+print "2) List by year \n";
+print "3) List by Asignament \n";
+print "4) List by Semester \n";
+print "0) Back to main menu \n";
+
+print ":";
+my $opt=<STDIN>; 
 
 while($opt!=0)
 {
-
-if( $opt == 1){print"hola";}
-elsif( $opt == 2){print"hello";}
-elsif( $opt == 3){print"alala";}
-elsif( $opt == 4){print"hao";}
-else {print "Option Incorrect\n";}
-
-
-print "\n---------------\nSCORES\n\n";    
-default_options();
-print"Insert Option: ";
-$opt=<STDIN>;
-}
-}
-
-
-sub menu_averages()
+switch($opt)
 {
-print "\n---------------\nAVERAGES\n\n";    
-print "1) List By ASC \n";
-print "2) List By DESC \n";
-print "3) Search by ID \n";
+case 1{print"list by student \n";}
+case 2{print"list by year \n";}
+case 3{print"list by asignament \n";}
+case 3{print"list by semester \n";}
+else{print"incorrect option \n";}
+}
 
-print"Insert Option: ";
-my $opt=<STDIN>;
-
-while($opt!=0)
-{
-
-if( $opt == 1){print"ORDER BY ASC\n";}
-elsif( $opt == 2){print" .. DESC \n";}
-elsif( $opt == 3){print"SEARCH \n";}
-else {print "Option Incorrect\n";}
-
-print "\n---------------\nAVERAGES\n\n";    
-print "1) List By ASC \n";
-print "2) List By DESC \n";
-print "3) Search by ID \n";
-
-
-print"Insert Option: ";
-$opt=<STDIN>;
+print "1) List by student \n";
+print "2) List by year \n";
+print "3) List by Asignament \n";
+print "4) List by Semester \n";
+print "0) Back to main menu \n";
+print ":";
+$opt=<STDIN>; 
 }
 }
+
 
 
 sub main()
 {
 menu();
-print "Insert Option:";
-my $opt = <STDIN>;
+print ":";
+my $opt=<STDIN>;
+
 
 while($opt!=0)
 {
-if( $opt == 1){menu_students();}
-elsif( $opt == 2){menu_asignaments();}
-elsif( $opt == 3){menu_scores();}
-elsif( $opt == 4){menu_averages();}
-else {print "Option Incorrect\n";}
+menu();
+switch($opt)
+{
+
+case 1
+{
+print "-------------------\n";
+print "STUDENTS\n";
+print "-------------------\n";
+students();
+}
+
+case 2
+{
+print "-------------------\n";
+print "ASSIGNEMENTS\n";
+print "-------------------\n";
+asignaments();
+}
+
+
+case 3
+{
+print "-------------------\n";
+print "SCORES\n";
+print "-------------------\n";
+scores();
+}
+
+case 4
+{
+print "-------------------\n";
+print "AVERAGES\n";
+print "-------------------\n";
+averages();
+}
+
+case 5
+{
+printf "convert to .CSV \n";
+
+}
+
+else
+{print "Incorrect Option \n";}
+}
 
 menu();
-print "Insert Option:";
-$opt=<STDIN>;
+print ":";
+$opt=<STDIN>
 }
-
 }
-
-#------------END MENU-------------
 
 main();
